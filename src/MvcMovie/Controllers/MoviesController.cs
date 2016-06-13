@@ -38,7 +38,8 @@ namespace MvcMovie.Controllers
             {
                 movies = movies.Where(x => x.Genre == movieGenre);
             }
-            
+
+            movies = movies.OrderBy(o => o.IMBD).ToList();
             var movieGenreVM = new MovieGenreViewModel();
             movieGenreVM.genres = new SelectList(await genreQuery.Distinct().ToListAsync());
             movieGenreVM.movies = await movies.ToListAsync();
@@ -62,16 +63,6 @@ namespace MvcMovie.Controllers
 
             return View(movie);
         }
-
-
-        public List<Movie> SortByRating(Movie items)
-        {
-           //what is the list of movies called? We've already created one right?
-           // it needs to replace movieList below
-            List<Movie> SortedmovieList = Model.movies.OrderBy(o => o.IMBD).ToList();
-            return SortedmovieList;
-        }
-
 
         // GET: Movies/Create
         public IActionResult Create()
