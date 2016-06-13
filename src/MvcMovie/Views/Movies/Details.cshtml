@@ -1,0 +1,64 @@
+@model MvcMovie.Models.Movie
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+
+
+<div class="row">
+    <div class="col-md-8 col-sm-12">
+        <h4>Movie</h4>
+        <hr />
+        <dl class="dl-horizontal" align="left" style="white-space:nowrap">
+            <dt>
+                @Html.DisplayNameFor(model => model.Genre)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Genre)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Price)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Price)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.ReleaseDate)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ReleaseDate)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Title)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Title)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Rating)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Rating)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Trailer)
+            </dt>
+            <dd>
+                <a href="@Model.Trailer">Link to trailer</a>
+            </dd>
+        </dl>
+     </div>
+    <div class="col-md-4 col-sm-12">
+        @if (Model.MoviePoster != null)
+        {
+            <img src="@Model.MoviePoster" alt="Movie Poster for @Model.Title" width="200" height="300"/>
+        }
+    </div>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.ID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
