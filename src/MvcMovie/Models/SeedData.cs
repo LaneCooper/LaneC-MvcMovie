@@ -23,6 +23,7 @@ namespace MvcMovie.Models
                      {
                          Title = "When Harry Met Sally",
                          Director = "Rob Reiner",
+                         IMBD= 7.6F,
                          ReleaseDate = DateTime.Parse("1989-1-11"),
                          Genre = "Romantic Comedy",
                          Rating = "R",
@@ -35,6 +36,7 @@ namespace MvcMovie.Models
                      {
                          Title = "Ghostbusters ",
                          Director = "Ivan Reitman",
+                         IMBD= 7.8F,
                          ReleaseDate = DateTime.Parse("1984-3-13"),
                          Genre = "Comedy",
                          Rating = "PG",
@@ -47,6 +49,7 @@ namespace MvcMovie.Models
                      {
                          Title = "Ghostbusters 2",
                          Director = "Ivan Reitman",
+                         IMBD= 6.5F,
                          ReleaseDate = DateTime.Parse("1986-2-23"),
                          Genre = "Comedy",
                          Rating = "PG",
@@ -59,6 +62,7 @@ namespace MvcMovie.Models
                    {
                        Title = "Rio Bravo",
                        Director = "Howard Hawks",
+                       IMBD=8.1F,
                        ReleaseDate = DateTime.Parse("1959-4-15"),
                        Genre = "Western",
                        Rating = "R",

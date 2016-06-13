@@ -17,6 +17,9 @@ namespace MvcMovie.Models
         [DataType(DataType.Date)]
         public DateTime ReleaseDate { get; set; }
 
+        [Range(0, 10)]
+        public float IMBD { get; set; }
+
         [RegularExpression(@"^[A-Z]+[a-zA-Z''-'\s]*$")]
         [Required]
         [StringLength(30)]
