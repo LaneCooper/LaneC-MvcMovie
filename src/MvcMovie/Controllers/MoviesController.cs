@@ -39,10 +39,10 @@ namespace MvcMovie.Controllers
                 movies = movies.Where(x => x.Genre == movieGenre);
             }
 
-            var Sortedmovies = movies.OrderByDescending(o => o.IMBD);
+            movies = movies.OrderBy(o => o.IMBD).ToList();
             var movieGenreVM = new MovieGenreViewModel();
             movieGenreVM.genres = new SelectList(await genreQuery.Distinct().ToListAsync());
-            movieGenreVM.movies = await Sortedmovies.ToListAsync();
+            movieGenreVM.movies = await movies.ToListAsync();
 
             return View(movieGenreVM);
         }
