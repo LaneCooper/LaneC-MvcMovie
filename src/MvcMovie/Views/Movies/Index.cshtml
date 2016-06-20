@@ -38,6 +38,9 @@
                 @Html.DisplayNameFor(model => model.movies[0].Title)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.movies[0].Trailer)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.movies[0].Director)
             </th>
             <th>
@@ -63,6 +66,9 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                <a href="@Html.DisplayFor(modelItem => item.Trailer)">Trailer</a>
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Director)

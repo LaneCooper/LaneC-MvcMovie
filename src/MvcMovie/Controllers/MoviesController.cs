@@ -39,7 +39,7 @@ namespace MvcMovie.Controllers
                 movies = movies.Where(x => x.Genre == movieGenre);
             }
 
-            movies = movies.OrderBy(o => o.IMBD).ToList();
+            movies = movies.OrderByDescending(o => o.IMBD);
             var movieGenreVM = new MovieGenreViewModel();
             movieGenreVM.genres = new SelectList(await genreQuery.Distinct().ToListAsync());
             movieGenreVM.movies = await movies.ToListAsync();
@@ -75,7 +75,7 @@ namespace MvcMovie.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Title,Director,IMBD,ReleaseDate,Genre,Price,Rating,MoviePoster,Trailer")] Movie movie)
+        public async Task<IActionResult> Create([Bind("ID,Title,Director,IMBD,ReleaseDate,Genre,Price,Rating,MoviePoster,Trailer,EmbededTrailer")] Movie movie)
         {
             if (ModelState.IsValid)
             {
@@ -107,7 +107,7 @@ namespace MvcMovie.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,Title,Director,IMBD,ReleaseDate,Genre,Price,Rating,MoviePoster,Trailer")] Movie movie)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,Title,Director,IMBD,ReleaseDate,Genre,Price,Rating,MoviePoster,Trailer,EmbededTrailer")] Movie movie)
         {
             if (id != movie.ID)
             {

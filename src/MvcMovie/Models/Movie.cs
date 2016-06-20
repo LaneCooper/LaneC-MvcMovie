@@ -38,5 +38,8 @@ namespace MvcMovie.Models
 
         [StringLength(300)]
         public string Trailer { get; set; }
+
+        [StringLength(300)]
+        public string EmbededTrailer { get; set; }
     }
 }
